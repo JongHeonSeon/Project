@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*---------------------------------------------
+	파일명 : __mbsc_custom
+	설　명 : mobiscroll 
+	작성순서 : 1. 레이아웃  2.크기/간격  3.박스모양  4.폰트  5.기타
+			position / display / float / overflow / width / height / padding / margin / border / background / font / etc...
+---------------------------------------------*/
+
+/* default */
+.mbsc-mng_w.mbsc-ios .mbsc-fr-w{font-family: 'NotoSansKR',sans-serif;}
+
+/* 시간선택 */
+.mbsc-mng_w.mbsc-fr-inline .mbsc-fr-w{margin:0; border:none; background:none; color:#202020; font-size:14px; overflow: hidden;}
+.mbsc-mng_w.mbsc-fr-inline .mbsc-fr-c{border:none;}
+.mbsc-mng_w .mbsc-sc-whl-w .mbsc-sc-itm{text-align: center; padding:0;}
+.mbsc-mng_w .mbsc-sc-whl-w {width:100%;}
+.mbsc-mng_w.mbsc-dt .mbsc-sc-itm{text-align: center; padding:0;}
+.mbsc-mng_w.mbsc-no-touch .mbsc-sc-itm.mbsc-btn-e:hover,
+.mbsc-mng_w .mbsc-sc-itm:focus{background-color:#EFF0FF;}
+.mbsc-mng_w .mbsc-sc-whl-l{border-color:var(--primary-500);}
+.mbsc-mng_w.mbsc-sc .mbsc-sc-whl .mbsc-sc-itm.mbsc-active{background: none;}
+
+/* 캘린더 */
+.mbsc-mng_w.mbsc-ios .mbsc-cal{padding: 0 5px;}
+.mbsc-mng_w .mbsc-cal-days{font-size: 21px;}
+.mbsc-mng_w .mbsc-cal-day-date{position: relative; font-size: 16px; z-index: 0;}
+.mbsc-mng_w .mbsc-cal-cell{border: unset;}
+.mbsc-mng_w .mbsc-cal-today{position: relative; color: unset;}
+.mbsc-mng_w .mbsc-cal-table{position: relative; overflow: hidden;}
+.mbsc-mng_w .mbsc-cal-c .mbsc-cal .mbsc-cal-body .mbsc-cal-row .mbsc-selected .mbsc-cal-cell-txt{border-color: transparent; background-color: transparent; color: #202020;}
+.mbsc-mng_w .mbsc-cal-cell:focus .mbsc-cal-cell-txt, .mbsc-mng_w.mbsc-no-touch:not(.mbsc-ev-cal) .mbsc-cal-cell:not(.mbsc-disabled):hover .mbsc-cal-cell-txt, .mbsc-mng_w.mbsc-no-touch .mbsc-cal-day:not(.mbsc-disabled) .mbsc-cal-day-date:hover{background: unset;}
+.mbsc-mng_w .mbsc-cal-year, .mbsc-ios .mbsc-cal-month{width: auto; font-weight: 700; font-size: 20px; color: #202020; -webkit-box-flex:unset; -webkit-flex:unset; -ms-flex:unset; flex:0 0 30%; z-index: -1;}
+.mbsc-mng_w .mbsc-cal-btn-w{display: flex; align-items: center;}
+.mbsc-mng_w .mbsc-cal-btn-w:first-child{justify-content: flex-end; margin-right: 4px;}
+.mbsc-mng_w .mbsc-cal-scroll{margin-top: 4px;}
+.mbsc-mng_w.mbsc-sc .mbsc-sc-whl .mbsc-sc-itm.mbsc-active{background: none;}
+.mbsc-mng_w.mbsc-ios .mbsc-cal-hdr{height: 32px; padding-top: 0; margin-top: 4px;}
+.mbsc-mng_w.mbsc-ios .mbsc-range-btn-t, .mbsc-ios .mbsc-range-btn-c{display: none;}
+.mbsc-mng_w .mbsc-cal-days > div{font-size: 15px; color: #909090;}
+.mbsc-mng_w .mbsc-cal-days > div:last-child{color: #6F8EE9;}
+.mbsc-mng_w .mbsc-cal-days > div:first-child{color: #EB5B5B;}
+.mbsc-mng_w .mbsc-cal-month, .mbsc-cal-year{overflow: visible;}
+.mbsc-mng_w.mbsc-ios .mbsc-cal .mbsc-cal-btn{margin: 0 6px; width: 24px; height: 24px; background-color: #E1E1E1;}
+.mbsc-mng_w .mbsc-ic-arrow-left5::before{content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 7px; height: 10px; margin-right: 1px; border-right: 7px solid #505050; border-top: 5px solid transparent; border-bottom: 5px solid transparent; box-sizing: border-box;}
+.mbsc-mng_w .mbsc-ic-arrow-right5::before{content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 7px; height: 10px; margin-left: 1px; border-left: 7px solid #505050; border-top: 5px solid transparent; border-bottom: 5px solid transparent; box-sizing: border-box;}
+.mbsc-mng_w .mbsc-cal-day-picker{margin-top: 8px;}
+.mbsc-mng_w .mbsc-cal-days{line-height: 38px;}
+.mbsc-mng_w .mbsc-cal-day-diff .mbsc-cal-day-date{display: none; cursor: default;}
+.mbsc-mng_w .mbsc-cal-day-diff::before{content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; background: #FFF;}
+.mbsc-mng_w.mbsc-ios .mbsc-cal-day-date{height: 28px; margin: 8px 0; line-height: 28px;}
+.mbsc-mng_w.mbsc-ios.mbsc-range .mbsc-cal-day{background: #FFFFFF;}
+.mbsc-mng_w.mbsc-ios.mbsc-range .mbsc-cal-day.mbsc-selected{background: none;}
+.mbsc-mng_w.mbsc-ios.mbsc-range .mbsc-cal-day.mbsc-selected:after{top:50%; left: 0; transform: translateY(-50%); width: 150%; height: 38px; background: var(--primary-100); border-radius: 0;}
+.mbsc-mng_w.mbsc-ios.mbsc-range .mbsc-cal-day.mbsc-cal-sel-start:after{width: 100%; left: 70%; border-radius: 0;}
+.mbsc-mng_w.mbsc-ios.mbsc-range .mbsc-cal-day.mbsc-cal-sel-end:after{width: 0; border-radius: 0 10px 10px 0;}
+.mbsc-mng_w .mbsc-cal-c .mbsc-cal .mbsc-cal-body .mbsc-cal-row .mbsc-cal-sel-start .mbsc-cal-cell-txt::after{content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 38px; height: 38px; border-radius: 50%; background: var(--primary-500); z-index: -1;}
+.mbsc-mng_w .mbsc-cal-c .mbsc-cal .mbsc-cal-body .mbsc-cal-row .mbsc-cal-sel-end .mbsc-cal-cell-txt::after{content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 38px; height: 38px; border-radius: 50%; background: var(--primary-500); z-index: -1;}
+.mbsc-mng_w .mbsc-cal-c .mbsc-cal .mbsc-cal-body .mbsc-cal-row .mbsc-cal-sel-end .mbsc-cal-cell-txt{color: #FFFFFF;}
+.mbsc-mng_w .mbsc-cal-c .mbsc-cal .mbsc-cal-body .mbsc-cal-row .mbsc-cal-sel-start .mbsc-cal-cell-txt{color: #FFFFFF;}
+.mbsc-mng_w .mbsc-cal-day-i{height: 48px;}
+.mbsc-mng_w.mbsc-ios .mbsc-cal-day-scroll-c .mbsc-cal-slide{margin-bottom: 8px; padding-bottom: 0px;}

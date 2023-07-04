@@ -1,0 +1,56 @@
+/*□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□*/
+/*□                                            □*/
+/*□                 Typography                 □*/
+/*□                                            □*/
+/*□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□*/
+
+// font-size
+.fs{
+    @each $name, $size in $font-size {
+        &#{$name} {
+            font-size: #{$size} !important;
+        }
+    }
+}
+
+// font-weight
+.fw{
+    @each $name, $weight in $font-weight {
+        &#{$name} {
+            font-weight: #{$weight} !important;
+        }
+    }
+}
+
+// font-color
+.fc{
+    @each $name, $color in $font-color {
+        &#{$name} {
+            color: #{$color} !important;
+        }
+    }
+}
+
+/* text cut */
+.tc{
+    @each $line in $txt_cut_line{
+        @if ($line == 0) {
+            &{
+                @include txt_cut();
+            }
+        } @else{
+            &-#{$line}{
+                @include txt_cut($line);
+            }
+        }
+    }
+}
+
+/* text pre-wrap */
+.tpw{white-space: pre-wrap;}
+.tnw{white-space: nowrap;}
+
+/* text align */
+.tac{text-align: center;}
+.tal{text-align: left;}
+.tar{text-align: right;}

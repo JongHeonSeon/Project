@@ -1,0 +1,90 @@
+/*□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□*/
+/*□                                            □*/
+/*□                    Mixin                   □*/
+/*□                                            □*/
+/*□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□*/
+
+// Position
+@mixin position($p:static, $z:null, $t:null, $r:null, $b:null, $l:null) {
+    position: $p;
+    z-index: $z;
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+}
+
+// Flex
+@mixin flex($jc:flex-start, $ai:stretch, $d:row, $wrap:nowrap) {
+    display:flex;
+    flex-direction: $d;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-wrap: $wrap;
+}
+
+// Grid
+@mixin grid($col:null,$rowgap:null,$colgap:null){
+    display:grid;
+    grid-template-columns: repeat($col, 1fr);
+    row-gap: $rowgap;
+    column-gap: $colgap;
+}
+
+// Text Cut
+@mixin txt_cut($line:null){
+    @if($line == null) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display:-webkit-box;
+        -webkit-line-clamp: $line;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+    }
+}
+
+// background-image
+@mixin background($c:null,$img:null,$r:null,$p:null,$s:null){
+    background: {
+        color: $c;
+        image: $img;
+        repeat: $r;
+        position: $p;
+        size: $s;
+    }
+}
+
+// scroll bar
+@mixin scrollbar($size:10px, $thumb_size:4px, $bg:none){
+    &::-webkit-scrollbar{   
+        width:$size;
+        &-track{
+            background:$bg;
+            box-shadow:0 0 0 rgba(0,0,0,0);
+        }
+        &-thumb{
+            border-radius: $thumb_size / 2;
+            border:(($size - $thumb_size) / 2) solid transparent;
+            background:rgba(0,0,0,.25);
+            background-clip: padding-box;
+            &:hover{
+                background-color:rgba(0,0,0,.5);
+            }
+        }
+    }
+}
+
+// Break points
+@mixin break_point($breakpoint) {
+    @each $name, $break-point in $break-points {
+        @if $breakpoint == $name {
+            @media #{$break-point} {
+                @content
+            }
+        }
+    }
+}

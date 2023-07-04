@@ -1,0 +1,82 @@
+/*□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□*/
+/*□                                            □*/
+/*□                  Variables                 □*/
+/*□                                            □*/
+/*□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□*/
+
+//------------------------------------------------
+// Size
+//------------------------------------------------
+$sides:(
+    "t":top,
+    "r":right,
+    "b":bottom,
+    "l":left,
+    "x":null,
+    "y":null,
+    "null":null,
+);
+$sizes:(0,2,4,6,8,10,12,15,16,20,24,28,32,36,40,44,48,56,64,80);
+
+//------------------------------------------------
+// Break Point
+//------------------------------------------------
+
+// $break-points: ();
+// $break-points: map-merge((
+//     "pc":            unquote("(min-width:#{$pc-width})"),
+//     "hover":         unquote("(hover: hover)")
+// ), $break-points);
+
+//------------------------------------------------
+// typography
+//------------------------------------------------
+$font-size: ();
+$font-size: map-merge((
+    "10":    10px,
+    "11":    11px,
+    "12":    12px,
+    "13":    13px,
+    "14":    14px,
+    "15":    15px,
+    "16":    16px,
+    "17":    17px,
+    "18":    18px,
+    "19":    19px,
+    "20":    20px,
+    "21":    21px,
+    "22":    22px,
+    "24":    24px,
+    "28":    28px,
+    "32":    32px
+), $font-size);
+
+$font-weight: ();
+$font-weight: map-merge((
+    "r":     400,
+    "m":     500,
+    "b":     700,
+), $font-weight);
+
+$font-color: ();
+$font-color: map-merge((
+    "20":      $gray-20
+), $font-color);
+
+$txt_cut_line : (0,1,2,3,4,5);
+
+$font-base-color:        map-get($font-color, "50");
+$font-base-weight:       map-get($font-weight, "m");
+$font-base-size:         map-get($font-size, "15");
+
+$font-letter-spacing:    -0.5px;
+
+@mixin font-default-set {
+    font: {
+        family:          'NotoSansKR',sans-serif;
+        size:            $font-base-size;
+        weight:          $font-base-weight;
+    }
+    color:               $font-base-color;
+    letter-spacing:      $font-letter-spacing;
+}

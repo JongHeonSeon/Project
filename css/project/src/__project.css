@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/*---------------------------------------------
+	파일명 : __default
+	설　명 : Default
+	작성순서 : position / display / float / width / height / padding / margin / border / background / font / overflow / etc...
+---------------------------------------------*/
+
+.default{position: relative;}
