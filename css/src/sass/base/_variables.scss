@@ -22,11 +22,11 @@ $sizes:(0,2,4,6,8,10,12,15,16,20,24,28,32,36,40,44,48,56,64,80);
 // Break Point
 //------------------------------------------------
 
-// $break-points: ();
-// $break-points: map-merge((
-//     "pc":            unquote("(min-width:#{$pc-width})"),
-//     "hover":         unquote("(hover: hover)")
-// ), $break-points);
+$breakpoints:(
+    'mobile':(min-width: 460px),
+    'tablet':(min-width: 1300px),
+    'desktop':(min-width: 1920px)
+);
 
 //------------------------------------------------
 // typography

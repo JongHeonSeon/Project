@@ -7,6 +7,12 @@
 	설　명 : Header
 	작성순서 : position / display / float / width / height / padding / margin / border / background / font / overflow / etc...
 ---------------------------------------------*/
+
 .header{
-	
+	@include respond-to('tablet'){
+		background-color: #505050;
+	};
+	width: 100vw;
+	height: 500px;
+	background-color: #202020;
 }

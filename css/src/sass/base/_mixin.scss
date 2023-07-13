@@ -79,12 +79,10 @@
 }
 
 // Break points
-@mixin break_point($breakpoint) {
-    @each $name, $break-point in $break-points {
-        @if $breakpoint == $name {
-            @media #{$break-point} {
-                @content
-            }
+@mixin respond-to($name){
+    @if map-has-key($breakpoints, $name){
+        @media only all and #{inspect(map-get($breakpoints, $name))}{
+            @content;
         }
     }
 }

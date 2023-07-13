@@ -6,45 +6,29 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     gcmq = require('gulp-group-css-media-queries');
 
-gulp.task('sass:compile', function () {
+gulp.task('sass_project:compile', function () {
     return gulp
-        .src(['./css/common/sass/common.scss'])
+        .src(['./css/src/sass/common.scss'])
         .pipe(sass().on('error', sass.logError))
         .pipe(concat('common.css'))
         .pipe(gcmq())
         .pipe(cleanCSS())
-        .pipe(gulp.dest('css/common'))
+        .pipe(gulp.dest('css/src/sass'));
 });
-
-gulp.task('sass_project:compile', function () {
-    return gulp
-        .src(['./css/project/src/sass/common_project.scss'])
-        .pipe(sass().on('error', sass.logError))
-        .pipe(concat('common_project.css'))
-        .pipe(gcmq())
-        .pipe(cleanCSS())
-        .pipe(gulp.dest('css/project/src/sass'));
-});
-
-gulp.task('sass:watch', function () {
-    gulp.watch('./css/common/sass/*.scss', gulp.series(['sass:compile']));
-});
-
-gulp.task('sass', gulp.series('sass:compile', 'sass:watch'));
 
 gulp.task('project', () => {
     return (
         gulp
-            .src(['css/project/font.css', 'css/project/src/sass/*.css', 'css/project/src/*.css'])
+            .src(['css/font.css', 'css/src/sass/*.css', 'css/src/*.css'])
             .pipe(concat('project.css'))
             // .pipe(gcmq())
             .pipe(cleanCSS())
-            .pipe(gulp.dest('css/project'))
+            .pipe(gulp.dest('css'))
     );
 });
 
 gulp.task('project:watch', function () {
-    gulp.watch(['css/project/src/sass/*.css', 'css/project/src/*.css'], gulp.series(['project']));
+    gulp.watch(['css/src/sass/*.css', 'css/src/*.css'], gulp.series(['project']));
 });
 
 gulp.task(
