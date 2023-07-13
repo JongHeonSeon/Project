@@ -4,6 +4,15 @@
 /*□                                            □*/
 /*□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□□*/
 
+// Break points
+@mixin respond-to($name){
+    @if map-has-key($breakpoints, $name){
+        @media only all and #{inspect(map-get($breakpoints, $name))}{
+            @content;
+        }
+    }
+}
+
 // Position
 @mixin position($p:static, $z:null, $t:null, $r:null, $b:null, $l:null) {
     position: $p;
@@ -78,11 +87,8 @@
     }
 }
 
-// Break points
-@mixin respond-to($name){
-    @if map-has-key($breakpoints, $name){
-        @media only all and #{inspect(map-get($breakpoints, $name))}{
-            @content;
-        }
-    }
+// scroll snap
+@mixin scroll-snap($d:null){
+    scroll-snap-type: $d;
+    overflow-y: scroll;
 }
