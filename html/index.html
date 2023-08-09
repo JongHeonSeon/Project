@@ -51,7 +51,35 @@
 		<div class="main_box"></div>
 		<div class="main_box"></div>
 		<div class="main_box"></div>
+		<div class="pag">
+			<div class="pag_bullet active"></div>
+			<div class="pag_bullet"></div>
+			<div class="pag_bullet"></div>
+		</div>
 	</div>
+	<script>
+		$('.main').scroll(function(){
+			var mainBoxtop1 = $('.main_box').eq(0).offset().top;
+			var mainBoxtop2 = $('.main_box').eq(1).offset().top;
+			var mainBoxtop3 = $('.main_box').eq(2).offset().top;
+
+			if(mainBoxtop1 == 0){
+				$('.pag_bullet').eq(0).addClass('active');
+			} else {
+				$('.pag_bullet').eq(0).removeClass('active');
+			}
+			if(mainBoxtop2 == 0){
+				$('.pag_bullet').eq(1).addClass('active');
+			} else {
+				$('.pag_bullet').eq(1).removeClass('active');
+			}
+			if(mainBoxtop3 == 0){
+				$('.pag_bullet').eq(2).addClass('active');
+			} else {
+				$('.pag_bullet').eq(2).removeClass('active');
+			}
+		});
+	</script>
 	<script src="../js/default.js"></script>
 </body>
 </html>

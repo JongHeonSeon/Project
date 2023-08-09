@@ -9,8 +9,9 @@
 ---------------------------------------------*/
 
 .main{
+    @include position(relative);
     @include scroll-snap($d: y mandatory);
-    @include scrollbar;
+    @include scrollbar-none;
     width: 100vw;
     height: 100vh;
     &_box{
@@ -26,6 +27,22 @@
         }
         &:nth-child(2){
             background-color: #555;
+        }
+    }
+}
+
+.pag{
+    @include flex($d:column, $ai: center);
+    @include position($p: fixed, $z:1, $t:50%, $r:20px);
+    transform: translateY(-50%);
+    gap: 10px;
+    &_bullet{
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        background-color: #FFF;
+        &.active{
+            background-color: #202020;
         }
     }
 }
